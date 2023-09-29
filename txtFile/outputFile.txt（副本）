@@ -1,0 +1,522 @@
+
+Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+----------------------------------------------------------------------------------------------------------------------------
+      Doe            John      123445678             123456          Savings            Open     $    200.55
+     Beam             Jim      234556789             567890         Checking            Open     $   1234.56
+     Eyre            Jane      345667890             987654          Savings          Closed     $      2.33
+   Sawyer             Tom      456778901             234567               CD            Open     $    500.00      07/22/2022
+     Finn            Huck      567889012             345678         Checking            Open     $    123.98
+      Doe            John      123445678             222222               CD          Closed     $   5000.00      12/12/2022
+      Doe            John      123445678             333333         Checking            Open     $    999.99
+     Finn            Huck      567889012             654321          Savings            Open     $    543.66
+   Spratt            Jack      678990123             785609          Savings            Open     $    333.33
+      Doe            Jane      456789012             389765         Checking            Open     $    888.56
+      Doe            Jane      456789012             123123          Savings            Open     $   8765.43
+     Pond             Ben      123987456             999999               CD            Open     $  10000.00      04/11/2023
+     Pond             Ben      123987456             888888          Savings          Closed     $      0.00
+      Ack           Peter      998877665             777777               CD            Open     $ 123321.00      12/13/2024
+    James          Conner      123123123             132435          Savings            Open     $      0.00
+     Pond             Ben      123987456             879564         Checking          Closed     $   3434.77
+
+ Sum of All Savings Account Balance: 9845.30
+ Sum of All Checking Account Balance: 6681.86
+ Sum of All CD Account Balance: 138821.00
+ Sum of All Account Balance: 155348.16
+
+ Transaction Type - Balance
+ --------------------------
+ Account Number: -123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Balance
+ --------------------------
+ Account Number: 123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Balance
+ --------------------------
+ Account Number: 987654
+ !Error! Account is Closed
+
+
+ Transaction Type - Balance
+ --------------------------
+ Account Number: 345678
+ Account Type: Checking
+ Balance: 123.98
+
+
+ Transaction Type - Balance
+ --------------------------
+ Account Number: 234567
+ Account Type: CD
+ Balance: 500.00
+ Maturity Date: 07/22/2022
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: -123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: 123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: 987654
+ !Error! Account Status: Closed
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: 123456
+ Account Type: Savings
+ Balance: 200.55
+ Deposit Amount: -300.55
+ !Error! -300.55 is an Invalid Deposit Amount
+
+
+
+ Transaction Type - Balance
+ --------------------------
+ Account Number: 123456
+ Account Type: Savings
+ Balance: 200.55
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: 234567
+ Account Type: CD
+ Balance: 500.00
+ Deposit Amount: -3434.00
+ !Error! -3434.00 is an Invalid Deposit Amount
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: 999999
+ Account Type: CD
+ Balance: 10000.00
+ Maturity Date: 11/14/2024
+ Deposit Amount: 3000.03
+ New Balance: 13000.03
+ CD Term Entered(Months): 18
+ CD New Maturity Date: 11/14/2024
+
+
+ Transaction Type - Deposit
+ --------------------------
+ Account Number: 234567
+ Account Type: CD
+ Balance: 500.00
+ Maturity Date: 11/14/2023
+ Deposit Amount: 123.21
+ New Balance: 623.21
+ CD Term Entered(Months): 6
+ CD New Maturity Date: 11/14/2023
+
+
+ Transaction Type - Withdrawal
+ --------------------------
+ Account Number: -123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Withdrawal
+ --------------------------
+ Account Number: 123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 888888
+ !Error! Account status: Closed
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 654321
+ Account Type: Savings
+ Balance: 543.66
+ Withdraw Amount: -9999.99
+ !Error! Withdraw Amount is Negative
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 654321
+ Account Type: Savings
+ Balance: 543.66
+ Withdraw Amount: 9999.99
+ !Error! Insufficient Funds to Withdraw
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 654321
+ Account Type: Savings
+ Balance: 543.66
+ Withdraw Amount: 111.22
+ New Balance: 432.44
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number:234567
+ Account Type:CD
+ Balance:500.00
+ Withdraw Amount: -1000.01
+ !Error! Withdraw Amount is Negative
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number:234567
+ Account Type:CD
+ Balance:500.00
+ Withdraw Amount: 1000.01
+ !Error! Insufficient Funds to Withdraw
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 777777
+ Account Type: CD
+ Balance: 123321.00
+ Withdraw Amount: 12121.21
+ CD Maturity Date: 12/13/2024
+ !Error! CD Maturity Date 12/13/2024 not reached
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 234567
+ Account Type: CD
+ Balance: 500.00
+ Maturity Date: 05/14/2024
+ Withdraw Amount: 100.50
+ New Balance: 399.50
+ CD Term Entered(Months): 12
+ CD New Maturity Date: 05/14/2024
+
+
+ Transaction Type - Clear Check
+ --------------------------
+ Account Number: -123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Clear Check
+ --------------------------
+ Account Number: 123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Clear Check
+ --------------------------
+ Account Number: 987654
+ Account Type: !Error! Wrong Account Type
+ !Error! Account is not a Checking Type
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 879564
+ !Error! Account status: Closed
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 567890
+ Account Type: Checking
+ Balance: 1234.56
+ Check Amount: -333.33
+ !Error! Withdraw Amount is Negative
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 567890
+ Account Type: Checking
+ Balance: 1234.56
+ Check Amount: 6543.21
+ !Error! Insufficient Funds to Withdraw - Bounce Fee ($2.50) Charged
+ New Balance: 1232.06
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 567890
+ Account Type: Checking
+ Balance: 1234.56
+ Check Amount: 234.56
+ Check Date: 06/23/2025
+ !Error! Check is a Post-dated Check
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 567890
+ Account Type: Checking
+ Balance: 1234.56
+ Check Amount: 234.56
+ Check Date: 07/12/2012
+ !Error! Date of Check has Expired; Pass due 6 Months ago or Longer
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 345678
+ Account Type: Checking
+ Balance: 123.98
+ Check Amount: 23.98
+ Check Date: 02/28/2023
+ New Balance: 98.50
+
+
+ Transaction Type - New Account
+ --------------------------
+ Account Number: -100000
+ !Error! Account Number -100000 is Negative
+
+
+ Transaction Type - New Account
+ --------------------------
+ Account Number: 123456
+ !Error! Account Number 123456 Exist in the Database
+
+
+ Transaction Type - New Account
+ --------------------------
+ Account Number: 100001
+ Balance Amount: -3000.00
+ !Error! Balance Amount Entered is Negative
+
+
+ Transaction Type - New Account
+ ------------------------------
+ Account Number: 100001
+ Account Type: Savings
+ Balance: 3000.00
+ Success! Account 100001 is Created
+
+
+ Transaction Type - New Account
+ ------------------------------
+ Account Number: 100010
+ Account Type: CD
+ Balance: 11100.11
+ CD Term: 6
+ CD Maturity Date: 11/14/2023
+ Success! Account 100010 is Created
+
+
+ Transaction Type - New Account
+ ------------------------------
+ Account Number: 100011
+ Account Type: Checking
+ Balance: 3213.21
+ Success! Account 100011 is Created
+
+
+
+ Transaction Type - Withdrawal
+ -----------------------------
+ Account Number: 100010
+ Account Type: CD
+ Balance: 11100.11
+ Withdraw Amount: 1122.33
+ CD Maturity Date: 11/14/2023
+ !Error! CD Maturity Date 11/14/2023 not reached
+
+
+ Transaction Type - Clear Check
+ ------------------------------
+ Account Number: 100011
+ Account Type: Checking
+ Balance: 3213.21
+ Check Amount: 213.21
+ Check Date: 12/17/2022
+ New Balance: 3000.00
+
+
+ Transaction Type - Delete Account
+ --------------------------
+ Account Number: -123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Delete Account
+ --------------------------
+ Account Number: 123321
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Delete Account
+ --------------------------
+ Account Number: 389765
+ !Error! Account Contains Balance
+
+
+ Transaction Type - Delete Account
+ ---------------------------------
+ Account Number: 888888
+ Account 888888 is Deleted from the Database
+
+
+ Transaction Type - Account Info
+ -------------------------------
+ !Error! SSN 111133333 does not Exist
+
+
+ Transaction Type - Account Info
+ -------------------------------
+ SSN: 123445678
+ Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+ ----------------------------------------------------------------------------------------------------------------------------
+       Doe            John      123445678             123456          Savings            Open     $    200.55
+       Doe            John      123445678             222222               CD          Closed     $   5000.00      12/12/2022
+       Doe            John      123445678             333333         Checking            Open     $    999.99
+
+
+ Transaction Type - Account Info History
+ ---------------------------------------
+ !Error! SSN 543522534 does not Exist
+
+
+ Transaction Type - Account Info History
+ ---------------------------------------
+ SSN: 123987456
+ Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+ ----------------------------------------------------------------------------------------------------------------------------
+      Pond             Ben      123987456             999999               CD            Open     $  10000.00
+                     -------------------- Account Transaction --------------------
+        Date      Transaction      Amount      Status     Balance       Reason For Failure
+  05/14/2023          Deposit     3000.03   Processed    10000.00                           
+
+
+ Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+ ----------------------------------------------------------------------------------------------------------------------------
+      Pond             Ben      123987456             879564         Checking          Closed     $   3434.77
+                     -------------------- Account Transaction --------------------
+        Date      Transaction      Amount      Status     Balance       Reason For Failure
+  05/14/2023      Clear Check      123.45      Failed     3434.77       Account is Closed   
+
+
+ 2 Account(s) were found
+
+
+ Transaction Type - Account Info History
+ ---------------------------------------
+ SSN: 123445678
+ Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+ ----------------------------------------------------------------------------------------------------------------------------
+       Doe            John      123445678             123456          Savings            Open     $    200.55
+                     -------------------- Account Transaction --------------------
+        Date      Transaction      Amount      Status     Balance       Reason For Failure
+  05/14/2023          Deposit     -300.55      Failed      200.55       $-300.55 is an Invalid Amount
+  05/14/2023          Deposit      300.55   Processed      200.55                           
+  05/14/2023          Balance        0.00   Processed      200.55                           
+
+
+ Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+ ----------------------------------------------------------------------------------------------------------------------------
+       Doe            John      123445678             222222               CD          Closed     $   5000.00
+                     -------------------- Account Transaction --------------------
+        Date      Transaction      Amount      Status     Balance       Reason For Failure
+
+
+ Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+ ----------------------------------------------------------------------------------------------------------------------------
+       Doe            John      123445678             333333         Checking            Open     $    999.99
+                     -------------------- Account Transaction --------------------
+        Date      Transaction      Amount      Status     Balance       Reason For Failure
+
+
+ 3 Account(s) were found
+
+
+ Transaction Type - Close Account
+ --------------------------
+ Account Number: -909090
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Close Account
+ --------------------------
+ Account Number: 909090
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Close Account
+ -----------------------------
+ Account Number: 987654
+ !Error! Account status: Closed
+
+
+ Transaction Type - Close Account
+ --------------------------------
+ Account Number: 234567
+ Account is Closed As Requested
+
+
+ Transaction Type - Reopen Account
+ --------------------------
+ Account Number: -909090
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Reopen Account
+ --------------------------
+ Account Number: 909090
+ !Error! Account Number Does not Exist
+
+
+ Transaction Type - Reopen Account
+ -----------------------------
+ Account Number: 123456
+ !Error! Account status: Open
+
+
+ Transaction Type - Reopen Account
+ ---------------------------------
+ Account Number: 987654
+ Account is Reopened As Requested
+
+
+
+Last Name      First Name            SSN     Account Number     Account Type  Account Status         Balance   Maturity Date
+----------------------------------------------------------------------------------------------------------------------------
+      Doe            John      123445678             123456          Savings            Open     $    200.55
+     Beam             Jim      234556789             567890         Checking            Open     $   1234.56
+     Eyre            Jane      345667890             987654          Savings          Closed     $      2.33
+   Sawyer             Tom      456778901             234567               CD            Open     $    500.00      07/22/2022
+     Finn            Huck      567889012             345678         Checking            Open     $    123.98
+      Doe            John      123445678             222222               CD          Closed     $   5000.00      12/12/2022
+      Doe            John      123445678             333333         Checking            Open     $    999.99
+     Finn            Huck      567889012             654321          Savings            Open     $    543.66
+   Spratt            Jack      678990123             785609          Savings            Open     $    333.33
+      Doe            Jane      456789012             389765         Checking            Open     $    888.56
+      Doe            Jane      456789012             123123          Savings            Open     $   8765.43
+     Pond             Ben      123987456             999999               CD            Open     $  10000.00      04/11/2023
+      Pan            Jake      988776655             100011         Checking            Open     $   3213.21
+      Ack           Peter      998877665             777777               CD            Open     $ 123321.00      12/13/2024
+    James          Conner      123123123             132435          Savings            Open     $      0.00
+     Pond             Ben      123987456             879564         Checking          Closed     $   3434.77
+      Pan            Jake      988776655             100001          Savings            Open     $   3000.00
+      Pan            Jake      988776655             100010               CD          Closed     $  11100.11      11/14/2023
+
+ Sum of All Savings Account Balance: 12734.08
+ Sum of All Checking Account Balance: 9655.38
+ Sum of All CD Account Balance: 152943.85
+ Sum of All Account Balance: 175333.31
+
